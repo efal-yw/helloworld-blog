@@ -26,10 +26,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja">
-      <body className={(Noto_Sans_JP({
-        subsets: ['latin'],
-        weight: ['400', '700'],
-      })).className}>
+  <body className={notoSansJp.className}>
         <Navbar />
         {children}
       </body>
