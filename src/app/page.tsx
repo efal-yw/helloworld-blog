@@ -30,7 +30,7 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-center p-24">
       <h1 className="text-4xl font-bold">グッドモーニング、わたしのブログへ</h1>
       <p className="mt-4">これは脇田悠希のブログです。</p>
-      <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", marginTop: 32 }}>
+  <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "flex-start", marginTop: 32, width: "100%", maxWidth: 1200 }}>
         {articles.map((article) => (
           <ArticleCard key={article.slug} article={article} />
         ))}
