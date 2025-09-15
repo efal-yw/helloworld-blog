@@ -1,8 +1,10 @@
 export default function About() {
   return (
     <main>
-      <h1>Aboutページ</h1>
-      <p>ここはAboutページです。</p>
+      <h1>EfAlプロフィール</h1>
+      <p>EfAl</p>
+      <>
+
     </main>
   );
 }
