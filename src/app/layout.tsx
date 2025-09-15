@@ -1,13 +1,18 @@
+
 // src/app/layout.tsx
+import React from "react";
 
 import type { Metadata } from 'next'
 import { Noto_Sans_JP } from 'next/font/google'
+
 import './globals.css'
+import Navbar from './components/Navbar'
 
 const notoSansJp = Noto_Sans_JP({
   subsets: ['latin'], 
   weight: ['400', '700'],
 })
+
 
 export const metadata: Metadata = {
   title: 'EfAlのブログ',
@@ -21,7 +26,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja">
-      <body className={notoSansJp.className}>
+      <body className={(Noto_Sans_JP({
+        subsets: ['latin'],
+        weight: ['400', '700'],
+      })).className}>
+        <Navbar />
         {children}
       </body>
     </html>
