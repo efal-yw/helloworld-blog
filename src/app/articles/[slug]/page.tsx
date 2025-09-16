@@ -6,9 +6,6 @@ import { notFound } from "next/navigation";
 import { remark } from "remark";
 import html from "remark-html";
 
-type PageProps = {
-  params: { slug: string }
-};
 
 export async function generateStaticParams() {
   const articlesDir = path.join(process.cwd(), "src/articles");
@@ -16,7 +13,7 @@ export async function generateStaticParams() {
   return files.filter(f => f.endsWith(".md")).map(file => ({ slug: file.replace(/\.md$/, "") }));
 }
 
-export default async function ArticlePage({ params }: PageProps) {
+export default async function ArticlePage({ params }: { params: { slug: string } }) {
   const filePath = path.join(process.cwd(), "src/articles", `${params.slug}.md`);
   if (!fs.existsSync(filePath)) return notFound();
   const fileContent = fs.readFileSync(filePath, "utf-8");

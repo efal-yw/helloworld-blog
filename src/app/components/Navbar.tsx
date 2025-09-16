@@ -6,7 +6,7 @@ const Navbar = () => {
   return (
     <div style={{ width: "100%", background: "#fff" }}>
       <div style={{ padding: "1rem", textAlign: "center", fontWeight: "bold", fontSize: "1.7rem", letterSpacing: "0.05em", borderBottom: "1px solid #eee" }}>
-        EfAlのブログ
+        大学生のもがき方
       </div>
       <nav style={{ padding: "1rem", background: "#f5f5f5" }}>
         <ul style={{ display: "flex", gap: "1rem", listStyle: "none", margin: 0, padding: 0 }}>
