@@ -1,3 +1,4 @@
+
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
@@ -5,13 +6,17 @@ import { notFound } from "next/navigation";
 import { remark } from "remark";
 import html from "remark-html";
 
+type PageProps = {
+  params: { slug: string }
+};
+
 export async function generateStaticParams() {
   const articlesDir = path.join(process.cwd(), "src/articles");
   const files = fs.readdirSync(articlesDir);
   return files.filter(f => f.endsWith(".md")).map(file => ({ slug: file.replace(/\.md$/, "") }));
 }
 
-export default async function ArticlePage({ params }: { params: { slug: string } }) {
+export default async function ArticlePage({ params }: PageProps) {
   const filePath = path.join(process.cwd(), "src/articles", `${params.slug}.md`);
   if (!fs.existsSync(filePath)) return notFound();
   const fileContent = fs.readFileSync(filePath, "utf-8");
