@@ -13,7 +13,13 @@ export async function generateStaticParams(): Promise<{ slug: string }[]> {
   return files.filter(f => f.endsWith(".md")).map(file => ({ slug: file.replace(/\.md$/, "") }));
 }
 
-export default async function ArticlePage({ params }: { params: { slug: string } }) {
+type Props = {
+  params: {
+    slug: string;
+  };
+};
+
+export default async function ArticlePage({ params }: Props) {
   const filePath = path.join(process.cwd(), "src/articles", `${params.slug}.md`);
   if (!fs.existsSync(filePath)) return notFound();
   const fileContent = fs.readFileSync(filePath, "utf-8");
