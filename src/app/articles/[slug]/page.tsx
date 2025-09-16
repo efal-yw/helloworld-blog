@@ -15,12 +15,12 @@ export async function generateStaticParams(): Promise<{ slug: string }[]> {
 
 type Props = {
   params: {
-    slug: string;
-  };
-};
+    slug: string
+  }
+}
 
+// Props型を使うように修正
 export default async function ArticlePage({ params }: Props) {
-  const filePath = path.join(process.cwd(), "src/articles", `${params.slug}.md`);
   if (!fs.existsSync(filePath)) return notFound();
   const fileContent = fs.readFileSync(filePath, "utf-8");
   const { data, content } = matter(fileContent);
