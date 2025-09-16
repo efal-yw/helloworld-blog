@@ -7,7 +7,7 @@ import { remark } from "remark";
 import html from "remark-html";
 
 
-export async function generateStaticParams() {
+export async function generateStaticParams(): Promise<{ slug: string }[]> {
   const articlesDir = path.join(process.cwd(), "src/articles");
   const files = fs.readdirSync(articlesDir);
   return files.filter(f => f.endsWith(".md")).map(file => ({ slug: file.replace(/\.md$/, "") }));
