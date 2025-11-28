@@ -12,7 +12,7 @@ const config: Config = {
     extend: {},
   },
   plugins: [
-    typography,
+    require('@tailwindcss/typography'),
   ],
 }
 
