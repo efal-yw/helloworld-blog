@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <main>
+  <main className="prose mx-auto py-10">
       <p>2025/11/27</p>
       <h1>このブログについて</h1>
       <p>このブログは、京都で一人暮らしをする大学１回生のが、野望を実現するためにもがいた軌跡を残したものです</p>
