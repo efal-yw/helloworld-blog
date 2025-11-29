@@ -4,25 +4,35 @@ import Link from "next/link";
 
 const Navbar = () => {
   return (
-    <div style={{ width: "100%", background: "#111" }}>
-      <div style={{ padding: "1rem", textAlign: "center", fontWeight: "bold", fontSize: "1.7rem", letterSpacing: "0.05em", borderBottom: "1px solid #eee", background: "#fff", color: "#111" }}>
+    <header className="w-full">
+      <div className="py-4 text-center font-bold text-2xl tracking-wide border-b bg-white text-gray-900">
         大学生のもがき方
       </div>
-      <nav style={{ padding: "1rem", background: "#222" }}>
-        <ul style={{ display: "flex", gap: "1rem", listStyle: "none", margin: 0, padding: 0 }}>
+      <nav className="py-3 bg-gray-800">
+        <ul className="flex gap-4 list-none m-0 p-0 justify-center">
           <li>
             <Link href="/">
-              <span style={{ color: "#fff" }}>Home</span>
+              <span className="text-white hover:underline">Home</span>
             </Link>
           </li>
           <li>
             <Link href="/about">
-              <span style={{ color: "#fff" }}>About</span>
+              <span className="text-white hover:underline">About</span>
+            </Link>
+          </li>
+          <li>
+            <Link href="/portfolio">
+              <span className="text-white hover:underline">Portfolio</span>
+            </Link>
+          </li>
+          <li>
+            <Link href="/maze">
+              <span className="text-white hover:underline">Maze</span>
             </Link>
           </li>
         </ul>
       </nav>
-    </div>
+    </header>
   );
 };
 
